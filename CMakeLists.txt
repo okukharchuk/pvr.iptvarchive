@@ -1,4 +1,4 @@
-project(pvr.iptvsimple)
+project(pvr.iptvarchive)
 
 cmake_minimum_required(VERSION 2.6)
 
@@ -24,14 +24,16 @@ set(DEPLIBS ${p8-platform_LIBRARIES}
 message(STATUS "ZLIB_LIBRARIES: ${ZLIB_LIBRARIES}")
 
 set(IPTV_SOURCES src/client.cpp
-                 src/PVRIptvData.cpp)
+                 src/PVRIptvData.cpp
+                 src/ArchiveConfig.cpp)
 
 set(IPTV_HEADERS src/client.h
-                 src/PVRIptvData.h)
+                 src/PVRIptvData.h
+                 src/ArchiveConfig.h)
 
-addon_version(pvr.iptvsimple IPTV)
+addon_version(pvr.iptvarchive IPTV)
 add_definitions(-DIPTV_VERSION=${IPTV_VERSION})
 
-build_addon(pvr.iptvsimple IPTV DEPLIBS)
+build_addon(pvr.iptvarchive IPTV DEPLIBS)
 
 include(CPack)
